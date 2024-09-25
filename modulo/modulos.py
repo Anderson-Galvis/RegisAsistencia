@@ -6,6 +6,9 @@ import hashlib #importamos el diccionario
 from modulo.persistencia import guardarDat, cargarDat, CargarUser, guardarUser
 from modulo.interfaz import menu, Entrada
 
+datos = cargarDat()
+Usuari = CargarUser
+
 #fucnion para encriptar la contraseña 
 def passwDencrip(contra):
     #creamos el objeto usando SHA-256
@@ -56,7 +59,7 @@ def inicSesion(User):
             # Verificar la contraseña
             if passwEncrip == User[userName]["contraseña"]:
                 if not User[userName]["cambiada"]:  # Cambiar contraseña si es el primer inicio
-                    print("Es tu Primer Inicio de sesión. \nDebes cambiar tu Contraseña\n")
+                    print("Es tu Primer Inicio de sesión. \n Debes cambiar tu Contraseña\n")
                     newPass = input("Ingresa tu nueva contraseña: ")
                     newPassEncrip = passwDencrip(newPass)
                     User[userName]["contraseña"] = newPassEncrip
@@ -94,7 +97,7 @@ def gestionUser (User):
                     break
                 else:
                     continue
-            
+
         except ValueError:
             print("Error: Entrada no válida. Por favor, eliga una opcion correcta ")
             input("Presione cualquier tecla para continuar...")
@@ -212,9 +215,16 @@ def cambiarPsw(User):
         print(f"Se produjo un error: {e}")
         input("Oprima una tecla para continuar...")
 
+def agregarAsist():
+    print("Error. Datos No Disponibles :'(")
 
+def ConsutarInf():
+    print("Error. Datos No Disponibles :'(")
 
-def menuPrin(datos):
+def generaInfor():
+    print("Error. Datos No Disponibles :'(")
+
+def menuPrin(datos, Usuari):
     while True:
         
         opcion = menu()
@@ -240,9 +250,10 @@ def menuPrin(datos):
             elif opcion == 7:
                 generaInfor(datos)
             elif opcion == 8:
-                cambiarPsw(datos)
+                cambiarPsw(Usuari)
             elif opcion == 9:
-                print("Saliendo del programa...")
+                print("Saliendo del programa.")
+                print("Gracias por usar el Sofware")
                 break
             else:
                 print("Opción no válida. Intente de nuevo.")

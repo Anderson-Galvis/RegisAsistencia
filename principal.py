@@ -1,6 +1,6 @@
 from modulo import modulos
-from modulo.persistencia import cargarDat, guardarDat, CargarUser
-
+from modulo.persistencia import cargarDat, guardarDat, CargarUser,guardarUser
+guser = guardarUser
 #1cargar los datos 
 User = CargarUser()
 modulos.limpiarPanta
@@ -10,4 +10,4 @@ modulos.gestionUser(User)
 # Despues 
 datos = cargarDat()
 guar = guardarDat
-modulos.menuPrin(datos)
+modulos.menuPrin(datos,User)
