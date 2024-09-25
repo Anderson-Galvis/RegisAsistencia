@@ -1,0 +1,11 @@
+{
+    "estudiantes": {},
+    "profesores": {},
+    "modulo": {},
+    "grupo": {
+        "1234": {
+            "nombre": "andres",
+            "sigla": "as2"
+        }
+    }
+}
